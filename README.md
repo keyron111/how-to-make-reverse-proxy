@@ -24,6 +24,9 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
+nano /etc/selinux/config
+SELINUX=permissive
+setenforce 0
 
 probros portov hq:
 ip nat source static tcp 192.168.100.2 80 172.16.4.2 80
